@@ -88,6 +88,7 @@ public class UserRegistry {
         ResultSet rs = databaseAccess.readData(selectUsersQuery);
 
         try{
+            rs.next();
             findUser = new User(rs.getInt("id"), rs.getString("login"), rs.getString("password"));
         } catch(SQLException e) {
             e.printStackTrace();

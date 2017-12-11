@@ -265,11 +265,6 @@ public class Main {
 
     }
 
-/*    private static void MakeBid() {
-        System.out.println("- - - - - - - - - - - ");
-        System.out.println("Make a bid");
-        System.out.println("- - - - - - - - - - - ");
-    }*/
 
     private static void displayUsersAuctions(
             User user,
