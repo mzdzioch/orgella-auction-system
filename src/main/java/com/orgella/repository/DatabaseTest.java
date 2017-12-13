@@ -1,11 +1,14 @@
 package com.orgella.repository;
 
 import com.orgella.controller.AuctionController;
+import com.orgella.exceptions.CredentialsToShortException;
+import com.orgella.exceptions.LoginNullException;
 import com.orgella.helpers.CategoryBuilder;
 import com.orgella.helpers.DatabaseAccess;
 import com.orgella.model.Auction;
 import com.orgella.model.Category;
 import com.orgella.model.Node;
+import com.orgella.model.User;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -23,9 +26,9 @@ public class DatabaseTest {
 
         DatabaseAccess dao = new DatabaseAccess();
 
-        CategoryBuilder categoryBuilder = new CategoryBuilder(dao);
+        //CategoryBuilder categoryBuilder = new CategoryBuilder(dao);
 
-        Node<Category> root = categoryBuilder.getBuilder();
+        //Node<Category> root = categoryBuilder.getBuilder();
         //System.out.println(root.getChildren().size());
         //System.out.println(categoryBuilder.getBuilder().getChildren().get(0).getChildren().size());
         //System.out.println(categoryBuilder.getRootCategories().getChildren().get(0).getItem().getName());
@@ -35,7 +38,12 @@ public class DatabaseTest {
 
         AuctionController auctionController = new AuctionController(ar);
 
-        auctionController.displayCategory();
+
+
+        User user = new User(1, "misiek", "123456");
+
+
+        auctionController.printAuctions(user);
 
 
 

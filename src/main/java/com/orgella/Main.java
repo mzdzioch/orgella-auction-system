@@ -65,7 +65,7 @@ public class Main {
                     state = printRegistrationScreen(input, userRegistry);
                     break;
                 case LOGGED_IN:
-                    state = printLoggedInScreen(input, auctionsRegistry, auctionController);
+                    state = printLoggedInScreen(input, auctionsRegistry, auctionController, userRegistry);
                     break;
                 case DURING_ADDING_AUCTION:
                     state = printAddAuctionScreen(input, userRegistry, auctionsRegistry);
@@ -190,7 +190,8 @@ public class Main {
     private static State printLoggedInScreen(
             Scanner input,
             AuctionsRegistry auctionsRegistry,
-            AuctionController auctionController) {
+            AuctionController auctionController,
+            UserRegistry userRegistry) {
         System.out.println("[4] display your auctions");
         System.out.println("[5] delete auction");
         System.out.println("[6] make a bid");
@@ -203,7 +204,7 @@ public class Main {
         switch (numberEntered) {
             case 0: return State.EXIT;
             case 4:
-                displayUsersAuctions(currentUser, auctionsRegistry);
+                displayUsersAuctions(currentUser, auctionsRegistry, userRegistry);
                 return State.LOGGED_IN;
             case 5:
                 return State.DURING_DELETING_AUCTION;
@@ -268,11 +269,13 @@ public class Main {
 
     private static void displayUsersAuctions(
             User user,
-            AuctionsRegistry auctionsRegistry) {
+            AuctionsRegistry auctionsRegistry,
+            UserRegistry userRegistry) {
 
         System.out.println("- - - - - - - - - - - ");
         System.out.println("Display all auctions of user");
         System.out.println("- - - - - - - - - - - ");
+        user = userRegistry.findUserByLogin(user.getLogin());
         AuctionController auctionController = new AuctionController(auctionsRegistry);
         auctionController.printAuctions(user);
     }

@@ -104,7 +104,7 @@ public class UserRegistry {
         checkUser = findUserByLogin(user.getLogin());
 
         if (checkUser != null) {
-            if (checkUser.equals(user.getLogin())) {
+            if (checkUser.getLogin().equals(user.getLogin())) {
                 return true;
             }
         }
@@ -115,7 +115,7 @@ public class UserRegistry {
 
         User lookupUser = findUserByLogin(user.getLogin());
 
-        if (lookupUser.equals(user.getLogin()) && lookupUser.equals(user.getPassword())) {
+        if (lookupUser.getLogin().equals(user.getLogin()) && lookupUser.getPassword().equals(user.getPassword())) {
             return true;
         }
 
