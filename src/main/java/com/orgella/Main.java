@@ -89,7 +89,6 @@ public class Main {
         displayAuctionsCategoryTree(auctionController);
         System.out.println("Select category to display");
 
-
         int categoryNumber = Integer.parseInt(input.next());
         if (auctionController.validateCategoryNumber(categoryNumber)) {
             // check if categoryNumber is valid number of category, like below :)
@@ -101,8 +100,10 @@ public class Main {
                 //chceck if auction number entered is one of auctions IDs of category and subcategories displayed
                 System.out.println("Enter your bid");
                 BigDecimal bidValue = new BigDecimal(input.next());
+                System.out.println("");
                 if (auctionController.validateBid(bidValue, auctionId)) {
                     // check if bidValue is not too low
+
                     if (auctionController.makeWinningBid(auctionId, bidValue, currentUser.getLogin())) {
                         // try to make winnig bid,
                         // in case of yes (won)

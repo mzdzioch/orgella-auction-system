@@ -5,10 +5,7 @@ import com.orgella.exceptions.CredentialsToShortException;
 import com.orgella.exceptions.LoginNullException;
 import com.orgella.helpers.CategoryBuilder;
 import com.orgella.helpers.DatabaseAccess;
-import com.orgella.model.Auction;
-import com.orgella.model.Category;
-import com.orgella.model.Node;
-import com.orgella.model.User;
+import com.orgella.model.*;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -70,18 +67,26 @@ public class DatabaseTest {
         //maps.putAll();
 
         //System.out.println(ar.getAllAuctions().get(2).toString());
+        System.out.println("-------------------- Aukcja jedna: ");
 
-        //System.out.println(ar.findAuctionById(1).toString());
-        //ar.insertBid(new Bid(1, 1, new BigDecimal(20)));
-        //System.out.println(ar.makeWinningBid(1,new BigDecimal(25),"jacek"));
+        System.out.println(ar.findAuctionById(3).toString());
+        ar.insertBid(new Bid(3, 1, new BigDecimal(21)));
 
-        //System.out.println(ar.getSingleAuction(1).toString());
+        System.out.println("--------------------> z ceną 21");
+        System.out.println(ar.getSingleAuction(3).toString());
+        System.out.println("-------------------- z ceną 21 wszystkie");
+        auctionController.printAuctions(user);
+        System.out.println("");
+        System.out.println(ar.makeWinningBid(3,new BigDecimal(25),"jacek"));
+        System.out.println(ar.validateAuctionToMakeBid(4, 3));
 
-//        Auction auction = ar.getSingleAuction(2);
-//        if(auction.validateBid(new BigDecimal(22))){
-//            System.out.println(ar.makeWinningBid(2,new BigDecimal(22),"jacek"));
-//        }
-        //System.out.println(ar.validateAuctionToMakeBid(1, 1));
+        System.out.println(ar.getSingleAuction(3).toString());
+
+        Auction auction = ar.getSingleAuction(3);
+        if(auction.validateBid(new BigDecimal(26))){
+            System.out.println(ar.makeWinningBid(3,new BigDecimal(26),"jacek"));
+        }
+        System.out.println(ar.validateAuctionToMakeBid(4, 3));
 
 
 

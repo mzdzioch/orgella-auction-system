@@ -225,7 +225,7 @@ public class AuctionsRegistry {
 
     }
 
-    private boolean insertBid(Bid bid){
+    public boolean insertBid(Bid bid){
 
         String addBidQuery = "INSERT INTO bids (auction_id, user_id, price) VALUES(" +
                 "'" + bid.getAuctionId() + "', " +
