@@ -6,7 +6,12 @@
           <option name="url" value="http://github.com" />
           <option name="userName" value="mzdzioch" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/SamouczekProgramisty/KursJava/tree/master/14_porownywanie_obiektow/src/main/java/pl/samouczekprogramisty/kursjava/equality" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="C:\dev\workspace\workspace" />
   </component>
 </application>
