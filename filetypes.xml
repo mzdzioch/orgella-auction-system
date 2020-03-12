@@ -2,8 +2,8 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping pattern="results" type="PLAIN_TEXT" />
-      <mapping pattern="inputFile" type="PLAIN_TEXT" />
       <mapping pattern="Test_questions" type="PLAIN_TEXT" />
+      <mapping pattern="inputFile" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
