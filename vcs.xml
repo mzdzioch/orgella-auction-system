@@ -14,6 +14,10 @@
           <option name="url" value="https://gitlab.com/elenx_net/Raicoone.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://gitlab.com" />
+          <option name="userName" value="michal.zdzioch@gmail.com" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\dev\opensource" />
